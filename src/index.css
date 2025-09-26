@@ -1,0 +1,189 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: black;
+  color: #ECE7D0;
+  font-size: 10px;
+  font-family: sans-serif;
+  min-height: 100vh;
+}
+
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 25px;
+  border: 2px solid pink;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 4px 7px 8px #888888;
+  margin: 20px auto;
+}
+
+/* Task Counter */
+.total {
+  border-radius: 50%;
+  background-color: #C78B9A;
+  height: 100px;
+  width: 100px;
+  font-size: 35px;
+  color: #ECE7D0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Form Section */
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.inputField {
+  flex: 1;
+  height: 40px;
+  background-color: #1f2937;
+  border: none;
+  color: pink;
+  border-radius: 10px;
+  padding: 0 12px;
+  font-size: 16px;
+}
+
+.addButton {
+  border-radius: 10px;
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+  background-color: #C78B9A;
+  border: none;
+  color: #ECE7D0;
+  cursor: pointer;
+}
+
+.list {
+  width: 100%;
+  margin-top: 25px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid pink;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 18px;
+  background-color: #111;
+  margin-bottom: 15px;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: gray;
+}
+
+
+input[type="checkbox"].check {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 3px solid #C78B9A;
+  border-radius: 0.2rem;
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+
+input[type="checkbox"].check::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0.4rem;
+  height: 0.8rem;
+  border-right: 2px solid #ECE7D0;
+  border-bottom: 2px solid #ECE7D0;
+  transform: translate(-50%, -50%) rotate(45deg) scale(0);
+  transform-origin: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+input[type="checkbox"].check:checked::before {
+  transform: translate(-50%, -65%) rotate(45deg) scale(1);
+}
+
+.deleteButton {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+#tasksdone {
+  font-size: 25px;
+}
+
+#keepitup {
+  font-size: 20px;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .form {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .inputField {
+    width: 100%;
+  }
+
+  .addButton {
+    width: 100%;
+  }
+
+  li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .total {
+    width: 80px;
+    height: 80px;
+    font-size: 30px;
+  }
+}
